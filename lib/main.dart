@@ -71,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: Text(widget.title),
         ),
-        body: const Center(child: Text("WELCOME TO YOUTH MAPPERS")),
+        body: const Center(child: Text("WELCOME TO COSAKU VOTE COUNTING PLATFORM")),
       ),
     );
   }
