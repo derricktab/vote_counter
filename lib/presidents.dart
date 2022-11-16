@@ -11,31 +11,40 @@ class Presidents extends StatefulWidget {
 class _PresidentsState extends State<Presidents> {
   var prefs;
 
-  var babrahCounter;
-  var patrickCounter;
+  var babrahCounter = 0;
+  var patrickCounter = 0;
 
   initalizePrefs() async {
     prefs = await SharedPreferences.getInstance();
     print(babrahCounter);
 
-    if (babrahCounter == null) {
-      prefs.setInt('babrah', 0);
+    if (babrahCounter == 0) {
+      setState(() {
+        prefs.setInt('babrah', 0);
+      });
     } else {
-      prefs.setInt('babrah', babrahCounter);
+      setState(() {
+       prefs.setInt('babrah', babrahCounter);       
+      });
     }
 
-    if (patrickCounter == null) {
+    if (patrickCounter == 0) {
+      setState(() {
       prefs.setInt('patrick', 0);
+      });
     } else {
-      prefs.setInt('patrick', patrickCounter);
+      setState(() {
+      prefs.setInt('patrick', patrickCounter); 
+      });
     }
   }
 
   getPrefValues() async {
     var prefs = await SharedPreferences.getInstance();
+
     setState(() {
-      babrahCounter = prefs.getInt("babrah");
-      patrickCounter = prefs.getInt("patrick");
+      babrahCounter = int.parse(prefs.getInt("babrah").toString()) ;
+      patrickCounter = int.parse(prefs.getInt("patrick").toString()) ;
     });
   }
 

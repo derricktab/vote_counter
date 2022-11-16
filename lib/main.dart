@@ -22,11 +22,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'YOUTH MAPPERS VOTING',
+      title: 'COSAKU VOTING',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Youth Mappers Voting'),
+      home: const MyHomePage(title: 'COSAKU VOTING'),
     );
   }
 }
@@ -52,7 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: true,
       routes: {
         "president": (context) => const Presidents(),
         "vice_presidents": (context) => const VicePresidents(),

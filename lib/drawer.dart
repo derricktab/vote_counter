@@ -13,7 +13,7 @@ class _MyDrawerState extends State<MyDrawer> {
     return Drawer(
       child: ListView(
         children: [
-          DrawerHeader(child: Image.asset("assets/logo.png")),
+          DrawerHeader(child: Image.asset("assets/cosaku.png")),
 
           // PRESIDENTS
           ListTile(
