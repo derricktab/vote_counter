@@ -1,82 +1,64 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class Presidents extends StatefulWidget {
-  const Presidents({super.key});
+class CommitteeMembers extends StatefulWidget {
+  const CommitteeMembers({super.key});
 
   @override
-  State<Presidents> createState() => _PresidentsState();
+  State<CommitteeMembers> createState() => _CommitteeMembersState();
 }
 
-class _PresidentsState extends State<Presidents> {
+class _CommitteeMembersState extends State<CommitteeMembers> {
   var prefs;
 
-  var julian = 0;
-  var leticia = 0;
-  var viola = 0;
+  var aaron = 0;
+  var babrah = 0;
 
   initalizePrefs() async {
     prefs = await SharedPreferences.getInstance();
 
-    if (julian == 0) {
+    if (babrah == 0) {
       setState(() {
-        prefs.setInt('julian', 0);
+        prefs.setInt('babrah', 0);
       });
     } else {
       setState(() {
-        prefs.setInt('julian', julian);
+        prefs.setInt('babrah', babrah);
       });
     }
 
-    if (leticia == 0) {
+    if (aaron == 0) {
       setState(() {
-        prefs.setInt('leticia', 0);
+        prefs.setInt('aaron', 0);
       });
     } else {
       setState(() {
-        prefs.setInt('leticia', leticia);
+        prefs.setInt('aaron', aaron);
       });
     }
 
-    if (viola == 0) {
-      setState(() {
-        prefs.setInt('viola', 0);
-      });
-    } else {
-      setState(() {
-        prefs.setInt('viola', viola);
-      });
-    }
   }
 
   getPrefValues() async {
     var prefs = await SharedPreferences.getInstance();
 
     setState(() {
-      viola = int.parse(prefs.getInt("viola").toString());
-      leticia = int.parse(prefs.getInt("leticia").toString());
-      julian = int.parse(prefs.getInt("julian").toString());
+      aaron = int.parse(prefs.getInt("aaron").toString());
+      babrah = int.parse(prefs.getInt("babrah").toString());
     });
   }
 
-  _incrementViola() {
+  _incrementBabrah() {
     setState(() {
-      viola++;
-      prefs.setInt('viola', viola);
+      babrah++;
+      prefs.setInt('babrah', babrah);
     });
   }
 
-  _incrementLeticia() {
+  _incrementAaron() {
     setState(() {
-      leticia++;
-      prefs.setInt('leticia', leticia);
-    });
-  }
-
-  _incrementJulian() {
-    setState(() {
-      julian++;
-      prefs.setInt('julian', julian);
+      aaron++;
+      prefs.setInt('aaron', aaron);
     });
   }
 
@@ -91,7 +73,7 @@ class _PresidentsState extends State<Presidents> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("COSAKU PRESIDENTIAL CANDIDATES"),
+        title: const Text("COSAKU COMMITTEE MEMBERS CANDIDATES"),
         centerTitle: true,
       ),
       body: ListView(children: [
@@ -106,7 +88,7 @@ class _PresidentsState extends State<Presidents> {
               width: 100,
             ),
             const Text(
-              "PRESIDENTS",
+              "COMMITTEE MEMBERS",
               style: TextStyle(
                   fontSize: 35,
                   fontWeight: FontWeight.bold,
@@ -119,11 +101,11 @@ class _PresidentsState extends State<Presidents> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // LETICIA
+              // AARON
               Column(
                 children: [
                   Image.asset(
-                    "assets/IMG_20221015_141738 - Nabunje Leticia.jpg",
+                    "assets/88967C1B-BD95-4AF6-8F8F-3C71751B5A5F - Wamono Aaron.jpeg",
                     width: 200,
                     height: 150,
                   ),
@@ -131,20 +113,20 @@ class _PresidentsState extends State<Presidents> {
                     height: 15,
                   ),
                   const Text(
-                    "NABUNJE LETICIA",
+                    "WAMONO AARON",
                     style: TextStyle(fontSize: 20),
                   ),
 
                   // COUNTER
                   Text(
-                    leticia.toString(),
+                    aaron.toString(),
                     style: const TextStyle(fontSize: 50),
                   ),
 
                   // INCREMENTING BUTTON
                   GestureDetector(
                     onTap: (() {
-                      _incrementLeticia();
+                      _incrementAaron();
                     }),
                     child: Container(
                       padding: const EdgeInsets.symmetric(
@@ -160,11 +142,11 @@ class _PresidentsState extends State<Presidents> {
 
               const SizedBox(width: 30),
 
-              // WAKOOLI VIOLA RITAH
+              // BABRAH
               Column(
                 children: [
                   Image.asset(
-                    "assets/IMG_20221103_183320 - Wakooli viola.png",
+                    "assets/IMG-20220930-WA0042 - akankunda babrah.jpg",
                     width: 200,
                     height: 150,
                   ),
@@ -172,20 +154,20 @@ class _PresidentsState extends State<Presidents> {
                     height: 15,
                   ),
                   const Text(
-                    "WAKOOLI VIOLA RITAH",
+                    "AKANKUNDA BABRAH",
                     style: TextStyle(fontSize: 20),
                   ),
 
                   // COUNTER
                   Text(
-                    viola.toString(),
+                    babrah.toString(),
                     style: const TextStyle(fontSize: 50),
                   ),
 
                   // INCREMENTING BUTTON
                   GestureDetector(
                     onTap: (() {
-                      _incrementViola();
+                      _incrementBabrah();
                     }),
                     child: Container(
                       padding: const EdgeInsets.symmetric(
@@ -199,42 +181,7 @@ class _PresidentsState extends State<Presidents> {
                 ],
               ),
 
-              const SizedBox(width: 30),
 
-              // AINEMBABAZI JULIAN
-              Column(
-                children: [
-                  Image.asset(
-                    "assets/DSC_69 - ainembabazi julian.jpg",
-                    width: 200,
-                    height: 150,
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  const Text(
-                    "AINEMBABAZI JULIAN",
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  Text(
-                    julian.toString(),
-                    style: const TextStyle(fontSize: 50),
-                  ),
-                  GestureDetector(
-                    onTap: (() {
-                      _incrementJulian();
-                    }),
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 10),
-                      decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(30)),
-                      child: const Text("ADD VOTE"),
-                    ),
-                  )
-                ],
-              ),
             ],
           ),
         )

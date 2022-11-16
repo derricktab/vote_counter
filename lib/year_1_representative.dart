@@ -1,38 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class Secretary extends StatefulWidget {
-  const Secretary({super.key});
+class Year1Representative extends StatefulWidget {
+  const Year1Representative({super.key});
 
   @override
-  State<Secretary> createState() => _SecretaryState();
+  State<Year1Representative> createState() => _Year1RepresentativeState();
 }
 
-class _SecretaryState extends State<Secretary> {
- var prefs;
-  var shifra;
+class _Year1RepresentativeState extends State<Year1Representative> {
+  var prefs;
+  var cephas = 0;
 
   initalizePrefs() async {
     prefs = await SharedPreferences.getInstance();
-    
-    if (shifra == null) {
-      prefs.setInt('shifra', 0);
+
+    if (cephas == 0) {
+      prefs.setInt('cephas', 0);
     } else {
-      prefs.setInt('shifra', shifra);
+      prefs.setInt('cephas', cephas);
     }
   }
 
   getPrefValues() async {
     var prefs = await SharedPreferences.getInstance();
     setState(() {
-      shifra = prefs.getInt("shifra");
+      cephas = int.parse(prefs.getInt("cephas").toString());
     });
   }
 
-  incrementShifra() {
+  incrementCephas() {
     setState(() {
-      shifra++;
-      prefs.setInt('shifra', shifra);
+      cephas++;
+      prefs.setInt('cephas', cephas);
     });
   }
 
@@ -43,12 +43,11 @@ class _SecretaryState extends State<Secretary> {
     initalizePrefs();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("SECRETARY"),
+        title: const Text("COSAKU YEAR 1 REPRESENTATIVE CONTESTANTS"),
         centerTitle: true,
       ),
       body: ListView(children: [
@@ -63,7 +62,7 @@ class _SecretaryState extends State<Secretary> {
               width: 100,
             ),
             const Text(
-              "SECRETARY",
+              "YEAR 1 REPRESENTATIVES",
               style: TextStyle(
                   fontSize: 35,
                   fontWeight: FontWeight.bold,
@@ -80,7 +79,7 @@ class _SecretaryState extends State<Secretary> {
               Column(
                 children: [
                   Image.asset(
-                    "assets/SHIFRAH.jpeg",
+                    "assets/Screenshot_20221105-175823 - Paul Muhwezi.png",
                     width: 200,
                     height: 150,
                   ),
@@ -88,20 +87,20 @@ class _SecretaryState extends State<Secretary> {
                     height: 15,
                   ),
                   const Text(
-                    "ABAHO SHIFRAH",
+                    "CEPHAS T.O NZAANA ",
                     style: TextStyle(fontSize: 20),
                   ),
 
                   // COUNTER
                   Text(
-                    shifra.toString(),
+                    cephas.toString(),
                     style: const TextStyle(fontSize: 50),
                   ),
 
                   // INCREMENTING BUTTON
                   GestureDetector(
                     onTap: (() {
-                      incrementShifra();
+                      incrementCephas();
                     }),
                     child: Container(
                       padding: const EdgeInsets.symmetric(
@@ -114,8 +113,6 @@ class _SecretaryState extends State<Secretary> {
                   ),
                 ],
               ),
-
-              
             ],
           ),
         )

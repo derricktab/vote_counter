@@ -13,11 +13,14 @@ class _MyDrawerState extends State<MyDrawer> {
     return Drawer(
       child: ListView(
         children: [
-          DrawerHeader(child: Image.asset("assets/cosaku.png")),
+          DrawerHeader(child: Image.asset("assets/logo.png")),
 
           // PRESIDENTS
           ListTile(
-            leading: const Icon(Icons.precision_manufacturing_sharp),
+            leading: const Icon(
+              Icons.nest_cam_wired_stand_outlined,
+              color: Colors.green,
+            ),
             title: const Text("Presidents"),
             onTap: () {
               Navigator.pushNamed(context, "president");
@@ -26,7 +29,7 @@ class _MyDrawerState extends State<MyDrawer> {
 
           // VICE PRESIDENTS
           ListTile(
-            leading: const Icon(Icons.precision_manufacturing_sharp),
+            leading: const Icon(Icons.account_box_outlined),
             title: const Text("Vice Presidents"),
             onTap: () {
               Navigator.pushNamed(context, "vice_presidents");
@@ -35,7 +38,10 @@ class _MyDrawerState extends State<MyDrawer> {
 
           // SECRETARY
           ListTile(
-            leading: const Icon(Icons.precision_manufacturing_sharp),
+            leading: const Icon(
+              Icons.note_alt_outlined,
+              color: Colors.red,
+            ),
             title: const Text("Secretary"),
             onTap: () {
               Navigator.pushNamed(context, "secretary");
@@ -44,7 +50,10 @@ class _MyDrawerState extends State<MyDrawer> {
 
           // TREASURER
           ListTile(
-            leading: const Icon(Icons.precision_manufacturing_sharp),
+            leading: const Icon(
+              Icons.precision_manufacturing_sharp,
+              color: Color.fromARGB(255, 208, 190, 27),
+            ),
             title: const Text("Treasurer"),
             onTap: () {
               Navigator.pushNamed(context, "treasurer");

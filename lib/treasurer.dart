@@ -11,29 +11,29 @@ class Treasurer extends StatefulWidget {
 
 class _TreasurerState extends State<Treasurer> {
  var prefs;
-  var florence;
+  var emily;
 
   initalizePrefs() async {
     prefs = await SharedPreferences.getInstance();
     
-    if (florence == null) {
-      prefs.setInt('florence', 0);
+    if (emily == null) {
+      prefs.setInt('emily', 0);
     } else {
-      prefs.setInt('florence', florence);
+      prefs.setInt('emily', emily);
     }
   }
 
   getPrefValues() async {
     var prefs = await SharedPreferences.getInstance();
     setState(() {
-      florence = prefs.getInt("florence");
+      emily = prefs.getInt("emily");
     });
   }
 
-  incrementFlorence() {
+  incrementEmily() {
     setState(() {
-      florence++;
-      prefs.setInt('florence', florence);
+      emily++;
+      prefs.setInt('emily', emily);
     });
   }
 
@@ -48,7 +48,7 @@ class _TreasurerState extends State<Treasurer> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("TREASURER"),
+        title: const Text("COSAKU TREASURER CONTENSTANTS"),
         centerTitle: true,
       ),
       body: ListView(children: [
@@ -76,7 +76,7 @@ class _TreasurerState extends State<Treasurer> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // EVE
+              // EMILY
               Column(
                 children: [
                   Image.asset(
@@ -88,20 +88,20 @@ class _TreasurerState extends State<Treasurer> {
                     height: 15,
                   ),
                   const Text(
-                    "BAGONZA FLORENCE",
+                    "NYAMWIJA EMILY",
                     style: TextStyle(fontSize: 20),
                   ),
 
                   // COUNTER
                   Text(
-                    florence.toString(),
+                    emily.toString(),
                     style: const TextStyle(fontSize: 50),
                   ),
 
                   // INCREMENTING BUTTON
                   GestureDetector(
                     onTap: (() {
-                      incrementFlorence();
+                      incrementEmily();
                     }),
                     child: Container(
                       padding: const EdgeInsets.symmetric(

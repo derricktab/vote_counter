@@ -1,50 +1,50 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class Presidents extends StatefulWidget {
-  const Presidents({super.key});
+class PresidentialAdvisor extends StatefulWidget {
+  const PresidentialAdvisor({super.key});
 
   @override
-  State<Presidents> createState() => _PresidentsState();
+  State<PresidentialAdvisor> createState() => _PresidentialAdvisorState();
 }
 
-class _PresidentsState extends State<Presidents> {
+class _PresidentialAdvisorState extends State<PresidentialAdvisor> {
   var prefs;
 
-  var julian = 0;
-  var leticia = 0;
-  var viola = 0;
+  var patrick = 0;
+  var ojara = 0;
+  var dreck = 0;
 
   initalizePrefs() async {
     prefs = await SharedPreferences.getInstance();
 
-    if (julian == 0) {
+    if (patrick == 0) {
       setState(() {
-        prefs.setInt('julian', 0);
+        prefs.setInt('patrick', 0);
       });
     } else {
       setState(() {
-        prefs.setInt('julian', julian);
+        prefs.setInt('patrick', patrick);
       });
     }
 
-    if (leticia == 0) {
+    if (ojara == 0) {
       setState(() {
-        prefs.setInt('leticia', 0);
+        prefs.setInt('ojara', 0);
       });
     } else {
       setState(() {
-        prefs.setInt('leticia', leticia);
+        prefs.setInt('ojara', ojara);
       });
     }
 
-    if (viola == 0) {
+    if (dreck == 0) {
       setState(() {
-        prefs.setInt('viola', 0);
+        prefs.setInt('dreck', 0);
       });
     } else {
       setState(() {
-        prefs.setInt('viola', viola);
+        prefs.setInt('dreck', dreck);
       });
     }
   }
@@ -53,30 +53,30 @@ class _PresidentsState extends State<Presidents> {
     var prefs = await SharedPreferences.getInstance();
 
     setState(() {
-      viola = int.parse(prefs.getInt("viola").toString());
-      leticia = int.parse(prefs.getInt("leticia").toString());
-      julian = int.parse(prefs.getInt("julian").toString());
+      ojara = int.parse(prefs.getInt("ojara").toString());
+      patrick = int.parse(prefs.getInt("patrick").toString());
+      dreck = int.parse(prefs.getInt("dreck").toString());
     });
   }
 
-  _incrementViola() {
+  _incrementOjara() {
     setState(() {
-      viola++;
-      prefs.setInt('viola', viola);
+      ojara++;
+      prefs.setInt('ojara', ojara);
     });
   }
 
-  _incrementLeticia() {
+  _incrementPatrick() {
     setState(() {
-      leticia++;
-      prefs.setInt('leticia', leticia);
+      patrick++;
+      prefs.setInt('patrick', patrick);
     });
   }
 
-  _incrementJulian() {
+  _incrementDreck() {
     setState(() {
-      julian++;
-      prefs.setInt('julian', julian);
+      dreck++;
+      prefs.setInt('dreck', dreck);
     });
   }
 
@@ -91,7 +91,7 @@ class _PresidentsState extends State<Presidents> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("COSAKU PRESIDENTIAL CANDIDATES"),
+        title: const Text("COSAKU PRESIDENTIAL ADVISOR CANDIDATES"),
         centerTitle: true,
       ),
       body: ListView(children: [
@@ -106,7 +106,7 @@ class _PresidentsState extends State<Presidents> {
               width: 100,
             ),
             const Text(
-              "PRESIDENTS",
+              "PRESIDENTIAL ADVISOR",
               style: TextStyle(
                   fontSize: 35,
                   fontWeight: FontWeight.bold,
@@ -119,11 +119,11 @@ class _PresidentsState extends State<Presidents> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // LETICIA
+              // OJARA
               Column(
                 children: [
                   Image.asset(
-                    "assets/IMG_20221015_141738 - Nabunje Leticia.jpg",
+                    "assets/Picture1529108452503 - Ojara Walter.jpg",
                     width: 200,
                     height: 150,
                   ),
@@ -131,20 +131,20 @@ class _PresidentsState extends State<Presidents> {
                     height: 15,
                   ),
                   const Text(
-                    "NABUNJE LETICIA",
+                    "OJARA WALTER",
                     style: TextStyle(fontSize: 20),
                   ),
 
                   // COUNTER
                   Text(
-                    leticia.toString(),
+                    ojara.toString(),
                     style: const TextStyle(fontSize: 50),
                   ),
 
                   // INCREMENTING BUTTON
                   GestureDetector(
                     onTap: (() {
-                      _incrementLeticia();
+                      _incrementOjara();
                     }),
                     child: Container(
                       padding: const EdgeInsets.symmetric(
@@ -160,7 +160,7 @@ class _PresidentsState extends State<Presidents> {
 
               const SizedBox(width: 30),
 
-              // WAKOOLI VIOLA RITAH
+              // PATRICK
               Column(
                 children: [
                   Image.asset(
@@ -172,20 +172,20 @@ class _PresidentsState extends State<Presidents> {
                     height: 15,
                   ),
                   const Text(
-                    "WAKOOLI VIOLA RITAH",
+                    "KAWEESI PATRICK",
                     style: TextStyle(fontSize: 20),
                   ),
 
                   // COUNTER
                   Text(
-                    viola.toString(),
+                    patrick.toString(),
                     style: const TextStyle(fontSize: 50),
                   ),
 
                   // INCREMENTING BUTTON
                   GestureDetector(
                     onTap: (() {
-                      _incrementViola();
+                      _incrementPatrick();
                     }),
                     child: Container(
                       padding: const EdgeInsets.symmetric(
@@ -201,11 +201,11 @@ class _PresidentsState extends State<Presidents> {
 
               const SizedBox(width: 30),
 
-              // AINEMBABAZI JULIAN
+              // DRECK
               Column(
                 children: [
                   Image.asset(
-                    "assets/DSC_69 - ainembabazi julian.jpg",
+                    "assets/IMG_20220123_184510 - muhwezi dreck.jpg",
                     width: 200,
                     height: 150,
                   ),
@@ -213,16 +213,16 @@ class _PresidentsState extends State<Presidents> {
                     height: 15,
                   ),
                   const Text(
-                    "AINEMBABAZI JULIAN",
+                    "MUHWEZI DRECK",
                     style: TextStyle(fontSize: 20),
                   ),
                   Text(
-                    julian.toString(),
+                    dreck.toString(),
                     style: const TextStyle(fontSize: 50),
                   ),
                   GestureDetector(
                     onTap: (() {
-                      _incrementJulian();
+                      _incrementDreck();
                     }),
                     child: Container(
                       padding: const EdgeInsets.symmetric(

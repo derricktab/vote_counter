@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:vote_counter/drawer.dart';
-import 'package:vote_counter/events_planner.dart';
 import 'package:vote_counter/presidents.dart';
 import 'package:vote_counter/projects_lead.dart';
 import 'package:vote_counter/publicity.dart';
@@ -22,11 +21,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'COSAKU VOTING',
+      title: 'COSAKU VOTE COUNTER',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'COSAKU VOTING'),
+      home: const MyHomePage(title: 'COSAKU VOTE COUNTER'),
     );
   }
 }
@@ -63,7 +62,6 @@ class _MyHomePageState extends State<MyHomePage> {
         "speaker": (context) => const Speaker(),
         "treasurer": (context) => const Treasurer(),
         "student_organization": (context) => const StudentOrganization(),
-        "events_planner": (context) => const EventsPlanner(),
         "projects_lead": (context) => const ProjectsLead(),
       },
       home: Scaffold(

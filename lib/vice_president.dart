@@ -11,29 +11,34 @@ class VicePresidents extends StatefulWidget {
 
 class _VicePresidentsState extends State<VicePresidents> {
   var prefs;
-  var eveCounter;
+  var phillip = 0;
 
   initalizePrefs() async {
     prefs = await SharedPreferences.getInstance();
     
-    if (eveCounter == null) {
-      prefs.setInt('eve', 0);
+    if (phillip == 0) {
+      setState(() {
+      prefs.setInt('phillip', 0);
+        
+      });
     } else {
-      prefs.setInt('eve', eveCounter);
+      setState(() {
+       prefs.setInt('phillip', phillip);
+      });
     }
   }
 
   getPrefValues() async {
     var prefs = await SharedPreferences.getInstance();
     setState(() {
-      eveCounter = prefs.getInt("eve");
+      phillip = int.parse(prefs.getInt("phillip").toString());
     });
   }
 
-  incrementEve() {
+  incrementPhillip() {
     setState(() {
-      eveCounter++;
-      prefs.setInt('eve', eveCounter);
+      phillip++;
+      prefs.setInt('phillip', phillip);
     });
   }
 
@@ -49,7 +54,7 @@ class _VicePresidentsState extends State<VicePresidents> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("VICE PRESIDENTS"),
+        title: const Text("COSAKU VICE PRESIDENT CONTESTANTS"),
         centerTitle: true,
       ),
       body: ListView(children: [
@@ -81,7 +86,7 @@ class _VicePresidentsState extends State<VicePresidents> {
               Column(
                 children: [
                   Image.asset(
-                    "assets/EVE.jpeg",
+                    "assets/FB_IMG_16671660488515072 - Ssempeebwa Phillip.jpg",
                     width: 200,
                     height: 150,
                   ),
@@ -89,20 +94,20 @@ class _VicePresidentsState extends State<VicePresidents> {
                     height: 15,
                   ),
                   const Text(
-                    "NABUKENYA EVA",
+                    "SSEMPEBWA PHILLIP",
                     style: TextStyle(fontSize: 20),
                   ),
 
                   // COUNTER
                   Text(
-                    eveCounter.toString(),
+                    phillip.toString(),
                     style: const TextStyle(fontSize: 50),
                   ),
 
                   // INCREMENTING BUTTON
                   GestureDetector(
                     onTap: (() {
-                      incrementEve();
+                      incrementPhillip();
                     }),
                     child: Container(
                       padding: const EdgeInsets.symmetric(

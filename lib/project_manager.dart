@@ -1,56 +1,64 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class EventsPlanner extends StatefulWidget {
-  const EventsPlanner({super.key});
+class ProjectManager extends StatefulWidget {
+  const ProjectManager({super.key});
 
   @override
-  State<EventsPlanner> createState() => _EventsPlannerState();
+  State<ProjectManager> createState() => _ProjectManagerState();
 }
 
-class _EventsPlannerState extends State<EventsPlanner> {
+class _ProjectManagerState extends State<ProjectManager> {
   var prefs;
 
-  var kasozi;
-  var dreck;
+  var blair = 0;
+  var gerrard = 0;
 
   initalizePrefs() async {
     prefs = await SharedPreferences.getInstance();
 
-    if (kasozi == null) {
-      prefs.setInt('kasozi', 0);
-      print("THE VALUES IS NULL");
+    if (blair == 0) {
+      setState(() {
+        prefs.setInt('blair', 0);
+      });
     } else {
-      prefs.setInt('kasozi', kasozi);
+      setState(() {
+        prefs.setInt('blair', blair);
+      });
     }
 
-    if (dreck == null) {
-      prefs.setInt('dreck', 0);
-      print("ITS NULL");
+    if (gerrard == 0) {
+      setState(() {
+        prefs.setInt('gerrard', 0);
+      });
     } else {
-      prefs.setInt('dreck', dreck);
+      setState(() {
+        prefs.setInt('gerrard', gerrard);
+      });
     }
+
   }
 
   getPrefValues() async {
     var prefs = await SharedPreferences.getInstance();
+
     setState(() {
-      kasozi = prefs.getInt("kasozi");
-      dreck = prefs.getInt("dreck");
+      gerrard = int.parse(prefs.getInt("gerrard").toString());
+      blair = int.parse(prefs.getInt("blair").toString());
     });
   }
 
-  incrementKasozi() {
+  _incrementGerrard() {
     setState(() {
-      kasozi++;
-      prefs.setInt('kasozi', kasozi);
+      gerrard++;
+      prefs.setInt('gerrard', gerrard);
     });
   }
 
-  incrementDreck() {
+  _incrementBlair() {
     setState(() {
-      dreck++;
-      prefs.setInt('dreck', dreck);
+      blair++;
+      prefs.setInt('blair', blair);
     });
   }
 
@@ -65,7 +73,7 @@ class _EventsPlannerState extends State<EventsPlanner> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("EVENTS PLANNER & RESEARCH LEAD"),
+        title: const Text("COSAKU PROJECT MANAGER CANDIDATES"),
         centerTitle: true,
       ),
       body: ListView(children: [
@@ -80,7 +88,7 @@ class _EventsPlannerState extends State<EventsPlanner> {
               width: 100,
             ),
             const Text(
-              "PRESIDENTS",
+              "PROJECT MANAGER",
               style: TextStyle(
                   fontSize: 35,
                   fontWeight: FontWeight.bold,
@@ -93,11 +101,11 @@ class _EventsPlannerState extends State<EventsPlanner> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // KASOZI
+              // BLAIR
               Column(
                 children: [
                   Image.asset(
-                    "assets/KASOZI.jpeg",
+                    "assets/89 - Nkuba Blair.jpg",
                     width: 200,
                     height: 150,
                   ),
@@ -105,20 +113,20 @@ class _EventsPlannerState extends State<EventsPlanner> {
                     height: 15,
                   ),
                   const Text(
-                    "KASOZI DENIS",
+                    "NKUBA BLAIR",
                     style: TextStyle(fontSize: 20),
                   ),
 
                   // COUNTER
                   Text(
-                    kasozi.toString(),
+                    blair.toString(),
                     style: const TextStyle(fontSize: 50),
                   ),
 
                   // INCREMENTING BUTTON
                   GestureDetector(
                     onTap: (() {
-                      incrementKasozi();
+                      _incrementBlair();
                     }),
                     child: Container(
                       padding: const EdgeInsets.symmetric(
@@ -134,11 +142,11 @@ class _EventsPlannerState extends State<EventsPlanner> {
 
               const SizedBox(width: 30),
 
-              // DRECK
+              // GERRARD
               Column(
                 children: [
                   Image.asset(
-                    "assets/DRECK.jpeg",
+                    "assets/IMG_20220909_103136_131 - AKANKUNDA GERRARD.jpg",
                     width: 200,
                     height: 150,
                   ),
@@ -146,16 +154,20 @@ class _EventsPlannerState extends State<EventsPlanner> {
                     height: 15,
                   ),
                   const Text(
-                    "MUHWEZI DRECK",
+                    "AKANKUNDA GERRARD",
                     style: TextStyle(fontSize: 20),
                   ),
+
+                  // COUNTER
                   Text(
-                    dreck.toString(),
+                    gerrard.toString(),
                     style: const TextStyle(fontSize: 50),
                   ),
+
+                  // INCREMENTING BUTTON
                   GestureDetector(
                     onTap: (() {
-                      incrementDreck();
+                      _incrementGerrard();
                     }),
                     child: Container(
                       padding: const EdgeInsets.symmetric(
@@ -165,9 +177,11 @@ class _EventsPlannerState extends State<EventsPlanner> {
                           borderRadius: BorderRadius.circular(30)),
                       child: const Text("ADD VOTE"),
                     ),
-                  )
+                  ),
                 ],
               ),
+
+
             ],
           ),
         )

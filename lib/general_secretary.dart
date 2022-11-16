@@ -1,39 +1,38 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-
-class TeamCoordinator extends StatefulWidget {
-  const TeamCoordinator({super.key});
+class GeneralSecretary extends StatefulWidget {
+  const GeneralSecretary({super.key});
 
   @override
-  State<TeamCoordinator> createState() => _TeamCoordinatorState();
+  State<GeneralSecretary> createState() => _GeneralSecretaryState();
 }
 
-class _TeamCoordinatorState extends State<TeamCoordinator> {
+class _GeneralSecretaryState extends State<GeneralSecretary> {
   var prefs;
-  var nasser;
+  var brenda = 0;
 
   initalizePrefs() async {
     prefs = await SharedPreferences.getInstance();
-    
-    if (nasser == null) {
-      prefs.setInt('nasser', 0);
+
+    if (brenda == null) {
+      prefs.setInt('brenda', 0);
     } else {
-      prefs.setInt('nasser', nasser);
+      prefs.setInt('brenda', brenda);
     }
   }
 
   getPrefValues() async {
     var prefs = await SharedPreferences.getInstance();
     setState(() {
-      nasser = prefs.getInt("nasser");
+      brenda = int.parse(prefs.getInt("brenda").toString());
     });
   }
 
-  incrementNasser() {
+  incrementBrenda() {
     setState(() {
-      nasser++;
-      prefs.setInt('nasser', nasser);
+      brenda++;
+      prefs.setInt('brenda', brenda);
     });
   }
 
@@ -48,7 +47,7 @@ class _TeamCoordinatorState extends State<TeamCoordinator> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("TEAM COORDINATOR"),
+        title: const Text("COSAKU GENERAL SECRETARY CONTESTANTS"),
         centerTitle: true,
       ),
       body: ListView(children: [
@@ -63,7 +62,7 @@ class _TeamCoordinatorState extends State<TeamCoordinator> {
               width: 100,
             ),
             const Text(
-              "TEAM COORDINATOR",
+              "GENERAL SECRETARY",
               style: TextStyle(
                   fontSize: 35,
                   fontWeight: FontWeight.bold,
@@ -80,7 +79,7 @@ class _TeamCoordinatorState extends State<TeamCoordinator> {
               Column(
                 children: [
                   Image.asset(
-                    "assets/NASSER.jpeg",
+                    "assets/wxde5l - Brenda Brenda Atuhaire.jpg",
                     width: 200,
                     height: 150,
                   ),
@@ -88,20 +87,20 @@ class _TeamCoordinatorState extends State<TeamCoordinator> {
                     height: 15,
                   ),
                   const Text(
-                    "BYARUHANGA NASSER",
+                    "ATUHAIRE BRENDA",
                     style: TextStyle(fontSize: 20),
                   ),
 
                   // COUNTER
                   Text(
-                    nasser.toString(),
+                    brenda.toString(),
                     style: const TextStyle(fontSize: 50),
                   ),
 
                   // INCREMENTING BUTTON
                   GestureDetector(
                     onTap: (() {
-                      incrementNasser();
+                      incrementBrenda();
                     }),
                     child: Container(
                       padding: const EdgeInsets.symmetric(
@@ -114,8 +113,6 @@ class _TeamCoordinatorState extends State<TeamCoordinator> {
                   ),
                 ],
               ),
-
-              
             ],
           ),
         )

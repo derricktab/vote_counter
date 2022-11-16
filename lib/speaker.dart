@@ -10,29 +10,29 @@ class Speaker extends StatefulWidget {
 
 class _SpeakerState extends State<Speaker> {
   var prefs;
-  var walter;
+  var paul = 0;
 
   initalizePrefs() async {
     prefs = await SharedPreferences.getInstance();
 
-    if (walter == null) {
-      prefs.setInt('walter', 0);
+    if (paul == null) {
+      prefs.setInt('paul', 0);
     } else {
-      prefs.setInt('walter', walter);
+      prefs.setInt('paul', paul);
     }
   }
 
   getPrefValues() async {
     var prefs = await SharedPreferences.getInstance();
     setState(() {
-      walter = prefs.getInt("walter");
+      paul = int.parse(prefs.getInt("paul").toString());
     });
   }
 
   incrementOjara() {
     setState(() {
-      walter++;
-      prefs.setInt('walter', walter);
+      paul++;
+      prefs.setInt('paul', paul);
     });
   }
 
@@ -47,7 +47,7 @@ class _SpeakerState extends State<Speaker> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("SPEAKER"),
+        title: const Text("COSAKU SPEAKER CONTESTANTS"),
         centerTitle: true,
       ),
       body: ListView(children: [
@@ -79,7 +79,7 @@ class _SpeakerState extends State<Speaker> {
               Column(
                 children: [
                   Image.asset(
-                    "assets/WALTER.jpeg",
+                    "assets/Screenshot_20221105-175823 - Paul Muhwezi.png",
                     width: 200,
                     height: 150,
                   ),
@@ -87,13 +87,13 @@ class _SpeakerState extends State<Speaker> {
                     height: 15,
                   ),
                   const Text(
-                    "OJARA WALTER",
+                    "MUHWEZI PAUL",
                     style: TextStyle(fontSize: 20),
                   ),
 
                   // COUNTER
                   Text(
-                    walter.toString(),
+                    paul.toString(),
                     style: const TextStyle(fontSize: 50),
                   ),
 
