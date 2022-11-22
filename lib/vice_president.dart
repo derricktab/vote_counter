@@ -240,7 +240,7 @@ class _VicePresidentState extends State<VicePresident> {
                 ],
               ),
 
-              const SizedBox(width: 20),
+              const SizedBox(width: 5),
 
               // KANADA SUVATI
               Column(
@@ -281,7 +281,7 @@ class _VicePresidentState extends State<VicePresident> {
                 ],
               ),
 
-              const SizedBox(width: 20),
+              const SizedBox(width: 5),
 
               // KAWEESI PATRICK
               Column(
@@ -322,7 +322,7 @@ class _VicePresidentState extends State<VicePresident> {
                 ],
               ),
 
-              const SizedBox(width: 20),
+              const SizedBox(width: 5),
 
               // SSENSALIRE DESIRE
               Column(
@@ -363,7 +363,7 @@ class _VicePresidentState extends State<VicePresident> {
                 ],
               ),
 
-              const SizedBox(width: 20),
+              const SizedBox(width: 5),
 
               // NABUKENYA EVA
               Column(
@@ -404,7 +404,7 @@ class _VicePresidentState extends State<VicePresident> {
                 ],
               ),
 
-              const SizedBox(width: 20),
+              const SizedBox(width: 5),
 
               // AYEBARE B GODFREY
               Column(
@@ -445,7 +445,7 @@ class _VicePresidentState extends State<VicePresident> {
                 ],
               ),
 
-              const SizedBox(width: 20),
+              const SizedBox(width: 5),
 
               // ASIIMWE RUTH
               Column(
