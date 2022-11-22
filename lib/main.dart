@@ -48,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: true,
+      debugShowCheckedModeBanner: false,
       routes: {
         "president": (context) => const Presidents(),
         "vice_president": (context) => const VicePresident(),
@@ -75,7 +75,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   fontSize: 40,
                   fontWeight: FontWeight.bold,
                   fontFamily: "times",
-                  color: Color.fromARGB(255, 6, 103, 149)),
+                  color: Color.fromARGB(255, 27, 149, 6)),
             )),
           ],
         ),

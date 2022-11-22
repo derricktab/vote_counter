@@ -36,7 +36,7 @@ class _MyDrawerState extends State<MyDrawer> {
             },
           ),
 
-          // SPEAKER
+          // SHE LEADS
           ListTile(
             leading: const Icon(
               Icons.woman_sharp,
@@ -48,7 +48,7 @@ class _MyDrawerState extends State<MyDrawer> {
             },
           ),
 
-          // DEPUTY SPEAKER
+          // VICE SPEAKER
           ListTile(
             leading: const Icon(
               Icons.health_and_safety,
@@ -96,53 +96,7 @@ class _MyDrawerState extends State<MyDrawer> {
             },
           ),
 
-          // COMMITTEE MEMBERS
-          ListTile(
-            leading: const Icon(
-              Icons.group,
-              color: Colors.green,
-            ),
-            title: const Text("Committee Members"),
-            onTap: () {
-              Navigator.pushNamed(context, "committee_members");
-            },
-          ),
-
-          // PROJECT MANAGER
-          ListTile(
-            leading: const Icon(
-              Icons.system_security_update_good_sharp,
-              color: Colors.purple,
-            ),
-            title: const Text("Project Manager"),
-            onTap: () {
-              Navigator.pushNamed(context, "project_manager");
-            },
-          ),
-
-          // Year 1 representative
-          ListTile(
-            leading: const Icon(
-              Icons.repeat_one_rounded,
-              color: Colors.indigo,
-            ),
-            title: const Text("Year 1 Representative"),
-            onTap: () {
-              Navigator.pushNamed(context, "year1_representative");
-            },
-          ),
-
-          // Year 2 representative
-          ListTile(
-            leading: const Icon(
-              Icons.restore_page_outlined,
-              color: Colors.brown,
-            ),
-            title: const Text("Year 2 Representative"),
-            onTap: () {
-              Navigator.pushNamed(context, "year2_representative");
-            },
-          ),
+        
         ],
       ),
     );
