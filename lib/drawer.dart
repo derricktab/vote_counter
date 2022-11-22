@@ -54,13 +54,13 @@ class _MyDrawerState extends State<MyDrawer> {
               Icons.health_and_safety,
               color: Colors.pink,
             ),
-            title: const Text("Deputy Speaker"),
+            title: const Text("Vice Speaker"),
             onTap: () {
               Navigator.pushNamed(context, "deputy_speaker");
             },
           ),
 
-          // GENERAL SECRETARY
+          // VICE SECRETARY
           ListTile(
             leading: const Icon(
               Icons.note_alt_outlined,
@@ -84,15 +84,15 @@ class _MyDrawerState extends State<MyDrawer> {
             },
           ),
 
-          // PRESIDENTIAL ADVISOR
+          // MOBILIZER
           ListTile(
             leading: const Icon(
               Icons.addchart_rounded,
               color: Colors.blue,
             ),
-            title: const Text("Presidential Advisor"),
+            title: const Text("Mobilizer"),
             onTap: () {
-              Navigator.pushNamed(context, "presidential_advisor");
+              Navigator.pushNamed(context, "mobilizer");
             },
           ),
 
