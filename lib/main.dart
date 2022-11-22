@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
       debugShowCheckedModeBanner: true,
       routes: {
         "president": (context) => const Presidents(),
-        "vice_presidents": (context) => const VicePresidents(),
+        "vice_president": (context) => const VicePresident(),
         "deputy_speaker": (context) => const DeputySpeaker(),
         "vice_secretary": (context) => const ViceSecretary(),
         "treasurer": (context) => const Treasurer(),

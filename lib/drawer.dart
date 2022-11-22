@@ -30,9 +30,9 @@ class _MyDrawerState extends State<MyDrawer> {
           // VICE PRESIDENTS
           ListTile(
             leading: const Icon(Icons.account_box_outlined),
-            title: const Text("Vice Presidents"),
+            title: const Text("Vice President"),
             onTap: () {
-              Navigator.pushNamed(context, "vice_presidents");
+              Navigator.pushNamed(context, "vice_president");
             },
           ),
 
