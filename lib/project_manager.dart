@@ -84,7 +84,7 @@ class _ProjectManagerState extends State<ProjectManager> {
           children: [
             Image.asset(
               "assets/logo.webp",
-              width: 100,
+              width: 200,
             ),
             const Text(
               "PROJECT MANAGER",

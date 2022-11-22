@@ -1,42 +1,63 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class VicePresidents extends StatefulWidget {
-  const VicePresidents({super.key});
+class SheLeads extends StatefulWidget {
+  const SheLeads({super.key});
 
   @override
-  State<VicePresidents> createState() => _VicePresidentsState();
+  State<SheLeads> createState() => _SheLeadsState();
 }
 
-class _VicePresidentsState extends State<VicePresidents> {
+class _SheLeadsState extends State<SheLeads> {
   var prefs;
-  var phillip = 0;
+
+  var glad = 0;
+  var happy = 0;
 
   initalizePrefs() async {
     prefs = await SharedPreferences.getInstance();
 
-    if (phillip == 0) {
+    if (happy == 0) {
       setState(() {
-        prefs.setInt('phillip', 0);
+        prefs.setInt('happy', 0);
       });
     } else {
       setState(() {
-        prefs.setInt('phillip', phillip);
+        prefs.setInt('happy', happy);
+      });
+    }
+
+    if (glad == 0) {
+      setState(() {
+        prefs.setInt('glad', 0);
+      });
+    } else {
+      setState(() {
+        prefs.setInt('glad', glad);
       });
     }
   }
 
   getPrefValues() async {
     var prefs = await SharedPreferences.getInstance();
+
     setState(() {
-      phillip = int.parse(prefs.getInt("phillip").toString());
+      happy = int.parse(prefs.getInt("happy").toString());
+      glad = int.parse(prefs.getInt("glad").toString());
     });
   }
 
-  incrementPhillip() {
+  _incrementglad() {
     setState(() {
-      phillip++;
-      prefs.setInt('phillip', phillip);
+      glad++;
+      prefs.setInt('glad', glad);
+    });
+  }
+
+  _incrementhappy() {
+    setState(() {
+      happy++;
+      prefs.setInt('happy', happy);
     });
   }
 
@@ -51,7 +72,7 @@ class _VicePresidentsState extends State<VicePresidents> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("COSAKU VICE PRESIDENT CONTESTANTS"),
+        title: const Text("ISACA SHE LEADS COORDINATOR CANDIDATES"),
         centerTitle: true,
       ),
       body: ListView(children: [
@@ -66,7 +87,7 @@ class _VicePresidentsState extends State<VicePresidents> {
               width: 200,
             ),
             const Text(
-              "VICE PRESIDENTS",
+              "SHE LEADS COORDINATOR",
               style: TextStyle(
                   fontSize: 35,
                   fontWeight: FontWeight.bold,
@@ -79,11 +100,11 @@ class _VicePresidentsState extends State<VicePresidents> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // EVE
+              // NUWASIIMA HAPPY
               Column(
                 children: [
                   Image.asset(
-                    "assets/FB_IMG_16671660488515072 - Ssempeebwa Phillip.jpg",
+                    "assets/IMG-20221119-WA0045 - NUWASIIMA Happy.jpg",
                     width: 200,
                     height: 150,
                   ),
@@ -91,20 +112,61 @@ class _VicePresidentsState extends State<VicePresidents> {
                     height: 15,
                   ),
                   const Text(
-                    "SSEMPEBWA PHILLIP",
+                    "NUWASIIMA HAPPY",
                     style: TextStyle(fontSize: 20),
                   ),
 
                   // COUNTER
                   Text(
-                    phillip.toString(),
+                    happy.toString(),
                     style: const TextStyle(fontSize: 50),
                   ),
 
                   // INCREMENTING BUTTON
                   GestureDetector(
                     onTap: (() {
-                      incrementPhillip();
+                      _incrementhappy();
+                    }),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 10),
+                      decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(30)),
+                      child: const Text("ADD VOTE"),
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(width: 30),
+
+              // OWOMUGISHA GLAD
+              Column(
+                children: [
+                  Image.asset(
+                    "assets/WhatsApp Image 2022-11-18 at 5.44.46 PM - Owomugisha Glad.jpeg",
+                    width: 200,
+                    height: 150,
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const Text(
+                    "OWOMUGISHA GLAD",
+                    style: TextStyle(fontSize: 20),
+                  ),
+
+                  // COUNTER
+                  Text(
+                    glad.toString(),
+                    style: const TextStyle(fontSize: 50),
+                  ),
+
+                  // INCREMENTING BUTTON
+                  GestureDetector(
+                    onTap: (() {
+                      _incrementglad();
                     }),
                     child: Container(
                       padding: const EdgeInsets.symmetric(

@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:vote_counter/committee_members.dart';
 import 'package:vote_counter/deputy_speaker.dart';
 import 'package:vote_counter/drawer.dart';
-import 'package:vote_counter/general_secretary.dart';
 import 'package:vote_counter/presidential_advisor.dart';
 import 'package:vote_counter/presidents.dart';
 import 'package:vote_counter/project_manager.dart';
-import 'package:vote_counter/speaker.dart';
 import 'package:vote_counter/treasurer.dart';
 import 'package:vote_counter/vice_president.dart';
+import 'package:vote_counter/vice_secretary.dart';
 import 'package:vote_counter/year_1_representative.dart';
 import 'package:vote_counter/year_2_representative.dart';
 
@@ -56,12 +54,10 @@ class _MyHomePageState extends State<MyHomePage> {
       routes: {
         "president": (context) => const Presidents(),
         "vice_presidents": (context) => const VicePresidents(),
-        "speaker": (context) => const Speaker(),
         "deputy_speaker": (context) => const DeputySpeaker(),
-        "general_secretary": (context) => const GeneralSecretary(),
+        "vice_secretary": (context) => const ViceSecretary(),
         "treasurer": (context) => const Treasurer(),
         "presidential_advisor": (context) => const PresidentialAdvisor(),
-        "committee_members": (context) => const CommitteeMembers(),
         "project_manager": (context) => const ProjectManager(),
         "year1_representative": (context) => const Year1Representative(),
         "year2_representative": (context) => const Year2Representative(),

@@ -63,7 +63,7 @@ class _TreasurerState extends State<Treasurer> {
           children: [
             Image.asset(
               "assets/logo.webp",
-              width: 100,
+              width: 200,
             ),
             const Text(
               "TREASURER",

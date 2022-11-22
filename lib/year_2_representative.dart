@@ -84,7 +84,7 @@ class _Year2RepresentativeState extends State<Year2Representative> {
           children: [
             Image.asset(
               "assets/logo.webp",
-              width: 100,
+              width: 200,
             ),
             const Text(
               "YEAR 2 REPRESENTATIVE",

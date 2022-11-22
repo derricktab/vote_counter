@@ -66,9 +66,9 @@ class _MyDrawerState extends State<MyDrawer> {
               Icons.note_alt_outlined,
               color: Colors.orange,
             ),
-            title: const Text("General Secretary"),
+            title: const Text("Vice Secretary"),
             onTap: () {
-              Navigator.pushNamed(context, "general_secretary");
+              Navigator.pushNamed(context, "vice_secretary");
             },
           ),
 

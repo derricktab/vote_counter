@@ -1,39 +1,39 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class CommitteeMembers extends StatefulWidget {
-  const CommitteeMembers({super.key});
+class ViceSecretary extends StatefulWidget {
+  const ViceSecretary({super.key});
 
   @override
-  State<CommitteeMembers> createState() => _CommitteeMembersState();
+  State<ViceSecretary> createState() => _ViceSecretaryState();
 }
 
-class _CommitteeMembersState extends State<CommitteeMembers> {
+class _ViceSecretaryState extends State<ViceSecretary> {
   var prefs;
 
-  var aaron = 0;
-  var babrah = 0;
+  var gerrald = 0;
+  var armson = 0;
 
   initalizePrefs() async {
     prefs = await SharedPreferences.getInstance();
 
-    if (babrah == 0) {
+    if (armson == 0) {
       setState(() {
-        prefs.setInt('babrah', 0);
+        prefs.setInt('armson', 0);
       });
     } else {
       setState(() {
-        prefs.setInt('babrah', babrah);
+        prefs.setInt('armson', armson);
       });
     }
 
-    if (aaron == 0) {
+    if (gerrald == 0) {
       setState(() {
-        prefs.setInt('aaron', 0);
+        prefs.setInt('gerrald', 0);
       });
     } else {
       setState(() {
-        prefs.setInt('aaron', aaron);
+        prefs.setInt('gerrald', gerrald);
       });
     }
   }
@@ -42,22 +42,22 @@ class _CommitteeMembersState extends State<CommitteeMembers> {
     var prefs = await SharedPreferences.getInstance();
 
     setState(() {
-      aaron = int.parse(prefs.getInt("aaron").toString());
-      babrah = int.parse(prefs.getInt("babrah").toString());
+      armson = int.parse(prefs.getInt("armson").toString());
+      gerrald = int.parse(prefs.getInt("gerrald").toString());
     });
   }
 
-  _incrementBabrah() {
+  _incrementgerrald() {
     setState(() {
-      babrah++;
-      prefs.setInt('babrah', babrah);
+      gerrald++;
+      prefs.setInt('gerrald', gerrald);
     });
   }
 
-  _incrementAaron() {
+  _incrementarmson() {
     setState(() {
-      aaron++;
-      prefs.setInt('aaron', aaron);
+      armson++;
+      prefs.setInt('armson', armson);
     });
   }
 
@@ -72,7 +72,7 @@ class _CommitteeMembersState extends State<CommitteeMembers> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("COSAKU COMMITTEE MEMBERS CANDIDATES"),
+        title: const Text("ISACA VICE SECRETARY CANDIDATES"),
         centerTitle: true,
       ),
       body: ListView(children: [
@@ -84,10 +84,10 @@ class _CommitteeMembersState extends State<CommitteeMembers> {
           children: [
             Image.asset(
               "assets/logo.webp",
-              width: 100,
+              width: 200,
             ),
             const Text(
-              "COMMITTEE MEMBERS",
+              "VICE SECRETARY",
               style: TextStyle(
                   fontSize: 35,
                   fontWeight: FontWeight.bold,
@@ -100,11 +100,11 @@ class _CommitteeMembersState extends State<CommitteeMembers> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // AARON
+              // TUMWEKWATSE ARMSON
               Column(
                 children: [
                   Image.asset(
-                    "assets/88967C1B-BD95-4AF6-8F8F-3C71751B5A5F - Wamono Aaron.jpeg",
+                    "assets/IMG_20221118_122325_224 - Armson Tumwekwatse.jpg",
                     width: 200,
                     height: 150,
                   ),
@@ -112,20 +112,20 @@ class _CommitteeMembersState extends State<CommitteeMembers> {
                     height: 15,
                   ),
                   const Text(
-                    "WAMONO AARON",
+                    "TUMWEKWATSE ARMSON",
                     style: TextStyle(fontSize: 20),
                   ),
 
                   // COUNTER
                   Text(
-                    aaron.toString(),
+                    armson.toString(),
                     style: const TextStyle(fontSize: 50),
                   ),
 
                   // INCREMENTING BUTTON
                   GestureDetector(
                     onTap: (() {
-                      _incrementAaron();
+                      _incrementarmson();
                     }),
                     child: Container(
                       padding: const EdgeInsets.symmetric(
@@ -141,11 +141,11 @@ class _CommitteeMembersState extends State<CommitteeMembers> {
 
               const SizedBox(width: 30),
 
-              // BABRAH
+              // MANIRIHO GERALD
               Column(
                 children: [
                   Image.asset(
-                    "assets/IMG-20220930-WA0042 - akankunda babrah.jpg",
+                    "assets/DSC_8098 - hammza gero.jpg",
                     width: 200,
                     height: 150,
                   ),
@@ -153,20 +153,20 @@ class _CommitteeMembersState extends State<CommitteeMembers> {
                     height: 15,
                   ),
                   const Text(
-                    "AKANKUNDA BABRAH",
+                    "MANIRIHO GERALD",
                     style: TextStyle(fontSize: 20),
                   ),
 
                   // COUNTER
                   Text(
-                    babrah.toString(),
+                    gerrald.toString(),
                     style: const TextStyle(fontSize: 50),
                   ),
 
                   // INCREMENTING BUTTON
                   GestureDetector(
                     onTap: (() {
-                      _incrementBabrah();
+                      _incrementgerrald();
                     }),
                     child: Container(
                       padding: const EdgeInsets.symmetric(

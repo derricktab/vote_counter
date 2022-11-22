@@ -103,7 +103,7 @@ class _PresidentialAdvisorState extends State<PresidentialAdvisor> {
           children: [
             Image.asset(
               "assets/logo.webp",
-              width: 100,
+              width: 200,
             ),
             const Text(
               "PRESIDENTIAL ADVISOR",

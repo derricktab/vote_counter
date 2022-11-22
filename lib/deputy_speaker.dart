@@ -11,29 +11,29 @@ class DeputySpeaker extends StatefulWidget {
 class _DeputySpeakerState extends State<DeputySpeaker> {
   var prefs;
 
-  var awany = 0;
-  var deborah = 0;
+  var kevin = 0;
+  var bridget = 0;
 
   initalizePrefs() async {
     prefs = await SharedPreferences.getInstance();
 
-    if (deborah == 0) {
+    if (bridget == 0) {
       setState(() {
-        prefs.setInt('deborah', 0);
+        prefs.setInt('bridget', 0);
       });
     } else {
       setState(() {
-        prefs.setInt('deborah', deborah);
+        prefs.setInt('bridget', bridget);
       });
     }
 
-    if (awany == 0) {
+    if (kevin == 0) {
       setState(() {
-        prefs.setInt('awany', 0);
+        prefs.setInt('kevin', 0);
       });
     } else {
       setState(() {
-        prefs.setInt('awany', awany);
+        prefs.setInt('kevin', kevin);
       });
     }
   }
@@ -42,22 +42,22 @@ class _DeputySpeakerState extends State<DeputySpeaker> {
     var prefs = await SharedPreferences.getInstance();
 
     setState(() {
-      deborah = int.parse(prefs.getInt("deborah").toString());
-      awany = int.parse(prefs.getInt("awany").toString());
+      bridget = int.parse(prefs.getInt("bridget").toString());
+      kevin = int.parse(prefs.getInt("kevin").toString());
     });
   }
 
-  _incrementDeborah() {
+  _incrementKevin() {
     setState(() {
-      deborah++;
-      prefs.setInt('deborah', deborah);
+      kevin++;
+      prefs.setInt('kevin', kevin);
     });
   }
 
-  _incrementAwany() {
+  _incrementBridget() {
     setState(() {
-      awany++;
-      prefs.setInt('awany', awany);
+      bridget++;
+      prefs.setInt('bridget', bridget);
     });
   }
 
@@ -72,7 +72,7 @@ class _DeputySpeakerState extends State<DeputySpeaker> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("COSAKU DEPUTY SPEAKER CANDIDATES"),
+        title: const Text("ISACA VICE SPEAKER CANDIDATES"),
         centerTitle: true,
       ),
       body: ListView(children: [
@@ -84,10 +84,10 @@ class _DeputySpeakerState extends State<DeputySpeaker> {
           children: [
             Image.asset(
               "assets/logo.webp",
-              width: 100,
+              width: 200,
             ),
             const Text(
-              "DEPUTY SPEAKER",
+              "VICE SPEAKER",
               style: TextStyle(
                   fontSize: 35,
                   fontWeight: FontWeight.bold,
@@ -100,11 +100,11 @@ class _DeputySpeakerState extends State<DeputySpeaker> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // AWANY
+              // KATUSHABE BRIDGET
               Column(
                 children: [
                   Image.asset(
-                    "assets/DSC_0091 - Mathew Alor.jpg",
+                    "assets/IMG_20220919_162937_666 - Katushabe Bridget.jpg",
                     width: 200,
                     height: 150,
                   ),
@@ -112,20 +112,20 @@ class _DeputySpeakerState extends State<DeputySpeaker> {
                     height: 15,
                   ),
                   const Text(
-                    "MATHEW ALOR AWANY",
+                    "KATUSHABE BRIDGET",
                     style: TextStyle(fontSize: 20),
                   ),
 
                   // COUNTER
                   Text(
-                    awany.toString(),
+                    bridget.toString(),
                     style: const TextStyle(fontSize: 50),
                   ),
 
                   // INCREMENTING BUTTON
                   GestureDetector(
                     onTap: (() {
-                      _incrementAwany();
+                      _incrementBridget();
                     }),
                     child: Container(
                       padding: const EdgeInsets.symmetric(
@@ -141,11 +141,11 @@ class _DeputySpeakerState extends State<DeputySpeaker> {
 
               const SizedBox(width: 30),
 
-              // DEBORAH
+              // ATWIJUKA KEVIN
               Column(
                 children: [
                   Image.asset(
-                    "assets/DGT_1721_025801 - nankunda deborah20.jpg",
+                    "assets/InShot_20221120_091537287 - atwijuka kevin.jpg",
                     width: 200,
                     height: 150,
                   ),
@@ -153,20 +153,20 @@ class _DeputySpeakerState extends State<DeputySpeaker> {
                     height: 15,
                   ),
                   const Text(
-                    "NANKUNDA DEBORAH",
+                    "ATWIJUKA KEVIN",
                     style: TextStyle(fontSize: 20),
                   ),
 
                   // COUNTER
                   Text(
-                    deborah.toString(),
+                    kevin.toString(),
                     style: const TextStyle(fontSize: 50),
                   ),
 
                   // INCREMENTING BUTTON
                   GestureDetector(
                     onTap: (() {
-                      _incrementDeborah();
+                      _incrementKevin();
                     }),
                     child: Container(
                       padding: const EdgeInsets.symmetric(
