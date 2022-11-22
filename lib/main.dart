@@ -72,9 +72,10 @@ class _MyHomePageState extends State<MyHomePage> {
           title: Text(widget.title),
         ),
         body: Column(
-          
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset("assets/logo.webp", width: 550),
+            SizedBox(height: MediaQuery.of(context).size.height * 0.15),
             const Center(
                 child: Text(
               "WELCOME TO ISACA VOTE COUNTING PLATFORM",

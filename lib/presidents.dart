@@ -11,40 +11,29 @@ class Presidents extends StatefulWidget {
 class _PresidentsState extends State<Presidents> {
   var prefs;
 
-  var julian = 0;
-  var leticia = 0;
-  var viola = 0;
+  var nasser = 0;
+  var osbert = 0;
 
   initalizePrefs() async {
     prefs = await SharedPreferences.getInstance();
 
-    if (julian == 0) {
+    if (nasser == 0) {
       setState(() {
-        prefs.setInt('julian', 0);
+        prefs.setInt('nasser', 0);
       });
     } else {
       setState(() {
-        prefs.setInt('julian', julian);
+        prefs.setInt('nasser', nasser);
       });
     }
 
-    if (leticia == 0) {
+    if (osbert == 0) {
       setState(() {
-        prefs.setInt('leticia', 0);
+        prefs.setInt('osbert', 0);
       });
     } else {
       setState(() {
-        prefs.setInt('leticia', leticia);
-      });
-    }
-
-    if (viola == 0) {
-      setState(() {
-        prefs.setInt('viola', 0);
-      });
-    } else {
-      setState(() {
-        prefs.setInt('viola', viola);
+        prefs.setInt('osbert', osbert);
       });
     }
   }
@@ -53,26 +42,24 @@ class _PresidentsState extends State<Presidents> {
     var prefs = await SharedPreferences.getInstance();
 
     setState(() {
-      viola = int.parse(prefs.getInt("viola").toString());
-      leticia = int.parse(prefs.getInt("leticia").toString());
-      julian = int.parse(prefs.getInt("julian").toString());
+      osbert = int.parse(prefs.getInt("osbert").toString());
+      nasser = int.parse(prefs.getInt("nasser").toString());
     });
   }
 
   _incrementNasser() {
     setState(() {
-      viola++;
-      prefs.setInt('viola', viola);
+      nasser++;
+      prefs.setInt('nasser', nasser);
     });
   }
 
   _incrementOsbert() {
     setState(() {
-      leticia++;
-      prefs.setInt('leticia', leticia);
+      osbert++;
+      prefs.setInt('osbert', osbert);
     });
   }
-
 
   @override
   void initState() {
@@ -97,8 +84,9 @@ class _PresidentsState extends State<Presidents> {
           children: [
             Image.asset(
               "assets/logo.webp",
-              width: 100,
+              width: 200,
             ),
+            const SizedBox(width: 30),
             const Text(
               "PRESIDENTS",
               style: TextStyle(
@@ -118,7 +106,7 @@ class _PresidentsState extends State<Presidents> {
                 children: [
                   Image.asset(
                     "assets/Screenshot_20221117-191111 - Byaruhanga Nasser.png",
-                    width: 200,
+                    width: 300,
                     height: 150,
                   ),
                   const SizedBox(
@@ -131,7 +119,7 @@ class _PresidentsState extends State<Presidents> {
 
                   // COUNTER
                   Text(
-                    leticia.toString(),
+                    nasser.toString(),
                     style: const TextStyle(fontSize: 50),
                   ),
 
@@ -159,7 +147,7 @@ class _PresidentsState extends State<Presidents> {
                 children: [
                   Image.asset(
                     "assets/IMG-20220724-WA0017 (2) - Twinomujuni Albert.jpg",
-                    width: 200,
+                    width: 300,
                     height: 150,
                   ),
                   const SizedBox(
@@ -172,7 +160,7 @@ class _PresidentsState extends State<Presidents> {
 
                   // COUNTER
                   Text(
-                    viola.toString(),
+                    osbert.toString(),
                     style: const TextStyle(fontSize: 50),
                   ),
 
@@ -194,7 +182,6 @@ class _PresidentsState extends State<Presidents> {
               ),
 
               const SizedBox(width: 30),
-
             ],
           ),
         )
