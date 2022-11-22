@@ -72,7 +72,7 @@ class _Year2RepresentativeState extends State<Year2Representative> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("COSAKU YEAR 2 REPRESENTATIVE CANDIDATES"),
+        title: const Text("ISACA YEAR 2 REPRESENTATIVE CANDIDATES"),
         centerTitle: true,
       ),
       body: ListView(children: [
@@ -86,6 +86,7 @@ class _Year2RepresentativeState extends State<Year2Representative> {
               "assets/logo.webp",
               width: 200,
             ),
+            const SizedBox(width: 15),
             const Text(
               "YEAR 2 REPRESENTATIVE",
               style: TextStyle(

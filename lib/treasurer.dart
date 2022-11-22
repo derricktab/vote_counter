@@ -10,18 +10,55 @@ class Treasurer extends StatefulWidget {
 
 class _TreasurerState extends State<Treasurer> {
   var prefs;
-  var emily = 0;
+  var dreck = 0;
+  var mark = 0;
+  var brenda = 0;
+  var patricia = 0;
 
   initalizePrefs() async {
     prefs = await SharedPreferences.getInstance();
 
-    if (emily == 0) {
+    // mark
+    if (mark == 0) {
       setState(() {
-        prefs.setInt('emily', 0);
+        prefs.setInt('mark', 0);
       });
     } else {
       setState(() {
-        prefs.setInt('emily', emily);
+        prefs.setInt('mark', mark);
+      });
+    }
+
+    // dreck
+    if (dreck == 0) {
+      setState(() {
+        prefs.setInt('dreck', 0);
+      });
+    } else {
+      setState(() {
+        prefs.setInt('dreck', mark);
+      });
+    }
+
+    // brenda
+    if (brenda == 0) {
+      setState(() {
+        prefs.setInt('brenda', 0);
+      });
+    } else {
+      setState(() {
+        prefs.setInt('brenda', brenda);
+      });
+    }
+
+    // patricia
+    if (patricia == 0) {
+      setState(() {
+        prefs.setInt('patricia', 0);
+      });
+    } else {
+      setState(() {
+        prefs.setInt('patricia', patricia);
       });
     }
   }
@@ -29,14 +66,38 @@ class _TreasurerState extends State<Treasurer> {
   getPrefValues() async {
     var prefs = await SharedPreferences.getInstance();
     setState(() {
-      emily = int.parse(prefs.getInt("emily").toString());
+      mark = int.parse(prefs.getInt("mark").toString());
+      dreck = int.parse(prefs.getInt("dreck").toString());
+      brenda = int.parse(prefs.getInt("brenda").toString());
+      patricia = int.parse(prefs.getInt("patricia").toString());
     });
   }
 
-  incrementEmily() {
+  incrementMark() {
     setState(() {
-      emily++;
-      prefs.setInt('emily', emily);
+      mark++;
+      prefs.setInt('mark', mark);
+    });
+  }
+
+  incrementDreck() {
+    setState(() {
+      dreck++;
+      prefs.setInt('dreck', dreck);
+    });
+  }
+
+  incrementBrenda() {
+    setState(() {
+      brenda++;
+      prefs.setInt('brenda', brenda);
+    });
+  }
+
+  incrementPatricia() {
+    setState(() {
+      patricia++;
+      prefs.setInt('patricia', patricia);
     });
   }
 
@@ -51,7 +112,7 @@ class _TreasurerState extends State<Treasurer> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("COSAKU TREASURER CONTENSTANTS"),
+        title: const Text("ISACA TREASURER CONTENSTANTS"),
         centerTitle: true,
       ),
       body: ListView(children: [
@@ -65,6 +126,7 @@ class _TreasurerState extends State<Treasurer> {
               "assets/logo.webp",
               width: 200,
             ),
+            const SizedBox(width: 15),
             const Text(
               "TREASURER",
               style: TextStyle(
@@ -79,11 +141,11 @@ class _TreasurerState extends State<Treasurer> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // EMILY
+              // MARK
               Column(
                 children: [
                   Image.asset(
-                    "assets/placeholder.PNG",
+                    "assets/mark - ASIIMWE MARK.jpg",
                     width: 200,
                     height: 150,
                   ),
@@ -91,20 +153,143 @@ class _TreasurerState extends State<Treasurer> {
                     height: 15,
                   ),
                   const Text(
-                    "NYAMWIJA EMILY",
+                    "ASIIMWE MARK",
                     style: TextStyle(fontSize: 20),
                   ),
 
                   // COUNTER
                   Text(
-                    emily.toString(),
+                    mark.toString(),
                     style: const TextStyle(fontSize: 50),
                   ),
 
                   // INCREMENTING BUTTON
                   GestureDetector(
                     onTap: (() {
-                      incrementEmily();
+                      incrementMark();
+                    }),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 10),
+                      decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(30)),
+                      child: const Text("ADD VOTE"),
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(width: 20),
+
+              // DRECK
+              Column(
+                children: [
+                  Image.asset(
+                    "assets/P-IMG-20221112-WA0078 - muhwezi dreck.jpg",
+                    width: 200,
+                    height: 150,
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const Text(
+                    "MUHWEZI DRECK",
+                    style: TextStyle(fontSize: 20),
+                  ),
+
+                  // COUNTER
+                  Text(
+                    dreck.toString(),
+                    style: const TextStyle(fontSize: 50),
+                  ),
+
+                  // INCREMENTING BUTTON
+                  GestureDetector(
+                    onTap: (() {
+                      incrementDreck();
+                    }),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 10),
+                      decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(30)),
+                      child: const Text("ADD VOTE"),
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(width: 20),
+
+              // BRENDA
+              Column(
+                children: [
+                  Image.asset(
+                    "assets/5 - Brenda Brenda Atuhaire.jpg",
+                    width: 200,
+                    height: 150,
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const Text(
+                    "ATUHAIRE BRENDA",
+                    style: TextStyle(fontSize: 20),
+                  ),
+
+                  // COUNTER
+                  Text(
+                    brenda.toString(),
+                    style: const TextStyle(fontSize: 50),
+                  ),
+
+                  // INCREMENTING BUTTON
+                  GestureDetector(
+                    onTap: (() {
+                      incrementBrenda();
+                    }),
+                    child: Container(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 10),
+                      decoration: BoxDecoration(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(30)),
+                      child: const Text("ADD VOTE"),
+                    ),
+                  ),
+                ],
+              ),
+
+              const SizedBox(width: 20),
+
+              // PATRICIA
+              Column(
+                children: [
+                  Image.asset(
+                    "assets/Snapchat-1804918806 - ATUHEIRE PATRICIA.jpg",
+                    width: 200,
+                    height: 150,
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  const Text(
+                    "ATUHEIRE PATRICIA",
+                    style: TextStyle(fontSize: 20),
+                  ),
+
+                  // COUNTER
+                  Text(
+                    patricia.toString(),
+                    style: const TextStyle(fontSize: 50),
+                  ),
+
+                  // INCREMENTING BUTTON
+                  GestureDetector(
+                    onTap: (() {
+                      incrementPatricia();
                     }),
                     child: Container(
                       padding: const EdgeInsets.symmetric(

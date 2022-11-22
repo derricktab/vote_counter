@@ -72,7 +72,7 @@ class _ProjectManagerState extends State<ProjectManager> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("COSAKU PROJECT MANAGER CANDIDATES"),
+        title: const Text("ISACA PROJECT MANAGER CANDIDATES"),
         centerTitle: true,
       ),
       body: ListView(children: [
@@ -86,6 +86,7 @@ class _ProjectManagerState extends State<ProjectManager> {
               "assets/logo.webp",
               width: 200,
             ),
+            const SizedBox(width: 15),
             const Text(
               "PROJECT MANAGER",
               style: TextStyle(

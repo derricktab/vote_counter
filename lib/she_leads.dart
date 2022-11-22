@@ -86,6 +86,7 @@ class _SheLeadsState extends State<SheLeads> {
               "assets/logo.webp",
               width: 200,
             ),
+            const SizedBox(width: 15),
             const Text(
               "SHE LEADS COORDINATOR",
               style: TextStyle(

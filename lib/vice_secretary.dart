@@ -86,6 +86,7 @@ class _ViceSecretaryState extends State<ViceSecretary> {
               "assets/logo.webp",
               width: 200,
             ),
+            const SizedBox(width: 15),
             const Text(
               "VICE SECRETARY",
               style: TextStyle(

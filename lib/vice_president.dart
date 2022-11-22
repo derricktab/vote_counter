@@ -51,7 +51,7 @@ class _VicePresidentsState extends State<VicePresidents> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("COSAKU VICE PRESIDENT CONTESTANTS"),
+        title: const Text("ISACA VICE PRESIDENT CONTESTANTS"),
         centerTitle: true,
       ),
       body: ListView(children: [
@@ -65,6 +65,7 @@ class _VicePresidentsState extends State<VicePresidents> {
               "assets/logo.webp",
               width: 200,
             ),
+            const SizedBox(width: 15),
             const Text(
               "VICE PRESIDENTS",
               style: TextStyle(

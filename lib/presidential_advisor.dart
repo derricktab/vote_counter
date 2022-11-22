@@ -91,7 +91,7 @@ class _PresidentialAdvisorState extends State<PresidentialAdvisor> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("COSAKU PRESIDENTIAL ADVISOR CANDIDATES"),
+        title: const Text("ISACA PRESIDENTIAL ADVISOR CANDIDATES"),
         centerTitle: true,
       ),
       body: ListView(children: [
@@ -105,6 +105,7 @@ class _PresidentialAdvisorState extends State<PresidentialAdvisor> {
               "assets/logo.webp",
               width: 200,
             ),
+            const SizedBox(width: 15),
             const Text(
               "PRESIDENTIAL ADVISOR",
               style: TextStyle(

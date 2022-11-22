@@ -39,12 +39,12 @@ class _MyDrawerState extends State<MyDrawer> {
           // SPEAKER
           ListTile(
             leading: const Icon(
-              Icons.speaker_group_rounded,
+              Icons.woman_sharp,
               color: Colors.black,
             ),
-            title: const Text("Speaker"),
+            title: const Text("She Leads"),
             onTap: () {
-              Navigator.pushNamed(context, "speaker");
+              Navigator.pushNamed(context, "she_leads");
             },
           ),
 

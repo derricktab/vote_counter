@@ -86,6 +86,7 @@ class _PresidentsState extends State<Presidents> {
               "assets/logo.webp",
               width: 200,
             ),
+            const SizedBox(width: 15),
             const SizedBox(width: 30),
             const Text(
               "PRESIDENTS",

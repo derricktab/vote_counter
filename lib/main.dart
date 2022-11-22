@@ -4,6 +4,7 @@ import 'package:vote_counter/drawer.dart';
 import 'package:vote_counter/presidential_advisor.dart';
 import 'package:vote_counter/presidents.dart';
 import 'package:vote_counter/project_manager.dart';
+import 'package:vote_counter/she_leads.dart';
 import 'package:vote_counter/treasurer.dart';
 import 'package:vote_counter/vice_president.dart';
 import 'package:vote_counter/vice_secretary.dart';
@@ -58,9 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
         "vice_secretary": (context) => const ViceSecretary(),
         "treasurer": (context) => const Treasurer(),
         "presidential_advisor": (context) => const PresidentialAdvisor(),
-        "project_manager": (context) => const ProjectManager(),
-        "year1_representative": (context) => const Year1Representative(),
-        "year2_representative": (context) => const Year2Representative(),
+        "she_leads": (context) => const SheLeads(),
       },
       home: Scaffold(
         drawer: const MyDrawer(),

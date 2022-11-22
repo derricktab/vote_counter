@@ -86,6 +86,7 @@ class _DeputySpeakerState extends State<DeputySpeaker> {
               "assets/logo.webp",
               width: 200,
             ),
+            const SizedBox(width: 15),
             const Text(
               "VICE SPEAKER",
               style: TextStyle(
