@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:vote_counter/committee_members.dart';
+import 'package:vote_counter/deputy_speaker.dart';
 import 'package:vote_counter/drawer.dart';
+import 'package:vote_counter/general_secretary.dart';
+import 'package:vote_counter/presidential_advisor.dart';
 import 'package:vote_counter/presidents.dart';
-import 'package:vote_counter/projects_lead.dart';
-import 'package:vote_counter/publicity.dart';
-import 'package:vote_counter/secretary.dart';
+import 'package:vote_counter/project_manager.dart';
 import 'package:vote_counter/speaker.dart';
-import 'package:vote_counter/student_organization.dart';
-import 'package:vote_counter/team_coordinator.dart';
-import 'package:vote_counter/technical_lead.dart';
 import 'package:vote_counter/treasurer.dart';
 import 'package:vote_counter/vice_president.dart';
+import 'package:vote_counter/year_1_representative.dart';
+import 'package:vote_counter/year_2_representative.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,11 +22,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'COSAKU VOTE COUNTER',
+      title: 'ISACA VOTE COUNTER',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'COSAKU VOTE COUNTER'),
+      home: const MyHomePage(title: 'ISACA VOTE COUNTER'),
     );
   }
 }
@@ -55,21 +56,36 @@ class _MyHomePageState extends State<MyHomePage> {
       routes: {
         "president": (context) => const Presidents(),
         "vice_presidents": (context) => const VicePresidents(),
-        "secretary": (context) => const Secretary(),
-        "technical_lead": (context) => const TechnicalLead(),
-        "team_coordinator": (context) => const TeamCoordinator(),
-        "publicity": (context) => const Publicity(),
         "speaker": (context) => const Speaker(),
+        "deputy_speaker": (context) => const DeputySpeaker(),
+        "general_secretary": (context) => const GeneralSecretary(),
         "treasurer": (context) => const Treasurer(),
-        "student_organization": (context) => const StudentOrganization(),
-        "projects_lead": (context) => const ProjectsLead(),
+        "presidential_advisor": (context) => const PresidentialAdvisor(),
+        "committee_members": (context) => const CommitteeMembers(),
+        "project_manager": (context) => const ProjectManager(),
+        "year1_representative": (context) => const Year1Representative(),
+        "year2_representative": (context) => const Year2Representative(),
       },
       home: Scaffold(
         drawer: const MyDrawer(),
         appBar: AppBar(
           title: Text(widget.title),
         ),
-        body: const Center(child: Text("WELCOME TO COSAKU VOTE COUNTING PLATFORM")),
+        body: Column(
+          
+          children: [
+            Image.asset("assets/logo.webp", width: 550),
+            const Center(
+                child: Text(
+              "WELCOME TO ISACA VOTE COUNTING PLATFORM",
+              style: TextStyle(
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "times",
+                  color: Color.fromARGB(255, 6, 103, 149)),
+            )),
+          ],
+        ),
       ),
     );
   }

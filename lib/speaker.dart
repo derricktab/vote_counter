@@ -58,7 +58,7 @@ class _SpeakerState extends State<Speaker> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              "assets/logo.png",
+              "assets/logo.webp",
               width: 100,
             ),
             const Text(

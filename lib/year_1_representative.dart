@@ -58,7 +58,7 @@ class _Year1RepresentativeState extends State<Year1Representative> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              "assets/logo.png",
+              "assets/logo.webp",
               width: 100,
             ),
             const Text(
@@ -75,11 +75,11 @@ class _Year1RepresentativeState extends State<Year1Representative> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // EVE
+              // CEPHAS
               Column(
                 children: [
                   Image.asset(
-                    "assets/Screenshot_20221105-175823 - Paul Muhwezi.png",
+                    "assets/cephas linkedin - Cephas Nzaana.jfif",
                     width: 200,
                     height: 150,
                   ),

@@ -102,7 +102,7 @@ class _PresidentialAdvisorState extends State<PresidentialAdvisor> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              "assets/logo.png",
+              "assets/logo.webp",
               width: 100,
             ),
             const Text(
@@ -164,7 +164,7 @@ class _PresidentialAdvisorState extends State<PresidentialAdvisor> {
               Column(
                 children: [
                   Image.asset(
-                    "assets/IMG_20221103_183320 - Wakooli viola.png",
+                    "assets/copy 2 - Patrick Kaweesi.jpg",
                     width: 200,
                     height: 150,
                   ),

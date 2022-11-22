@@ -13,7 +13,7 @@ class _MyDrawerState extends State<MyDrawer> {
     return Drawer(
       child: ListView(
         children: [
-          DrawerHeader(child: Image.asset("assets/logo.png")),
+          DrawerHeader(child: Image.asset("assets/logo.webp")),
 
           // PRESIDENTS
           ListTile(
@@ -36,22 +36,46 @@ class _MyDrawerState extends State<MyDrawer> {
             },
           ),
 
-          // SECRETARY
+          // SPEAKER
+          ListTile(
+            leading: const Icon(
+              Icons.speaker_group_rounded,
+              color: Colors.black,
+            ),
+            title: const Text("Speaker"),
+            onTap: () {
+              Navigator.pushNamed(context, "speaker");
+            },
+          ),
+
+          // DEPUTY SPEAKER
+          ListTile(
+            leading: const Icon(
+              Icons.health_and_safety,
+              color: Colors.pink,
+            ),
+            title: const Text("Deputy Speaker"),
+            onTap: () {
+              Navigator.pushNamed(context, "deputy_speaker");
+            },
+          ),
+
+          // GENERAL SECRETARY
           ListTile(
             leading: const Icon(
               Icons.note_alt_outlined,
-              color: Colors.red,
+              color: Colors.orange,
             ),
-            title: const Text("Secretary"),
+            title: const Text("General Secretary"),
             onTap: () {
-              Navigator.pushNamed(context, "secretary");
+              Navigator.pushNamed(context, "general_secretary");
             },
           ),
 
           // TREASURER
           ListTile(
             leading: const Icon(
-              Icons.precision_manufacturing_sharp,
+              Icons.money,
               color: Color.fromARGB(255, 208, 190, 27),
             ),
             title: const Text("Treasurer"),
@@ -60,67 +84,63 @@ class _MyDrawerState extends State<MyDrawer> {
             },
           ),
 
-          // TECHNICAL LEAD
+          // PRESIDENTIAL ADVISOR
           ListTile(
-            leading: const Icon(Icons.precision_manufacturing_sharp),
-            title: const Text("Technical Lead"),
+            leading: const Icon(
+              Icons.addchart_rounded,
+              color: Colors.blue,
+            ),
+            title: const Text("Presidential Advisor"),
             onTap: () {
-              Navigator.pushNamed(context, "technical_lead");
+              Navigator.pushNamed(context, "presidential_advisor");
             },
           ),
 
-          // SPEAKER
+          // COMMITTEE MEMBERS
           ListTile(
-            leading: const Icon(Icons.precision_manufacturing_sharp),
-            title: const Text("Speaker"),
+            leading: const Icon(
+              Icons.group,
+              color: Colors.green,
+            ),
+            title: const Text("Committee Members"),
             onTap: () {
-              Navigator.pushNamed(context, "speaker");
+              Navigator.pushNamed(context, "committee_members");
             },
           ),
 
-          // PROJECTS LEAD
+          // PROJECT MANAGER
           ListTile(
-            leading: const Icon(Icons.precision_manufacturing_sharp),
-            title: const Text("Projects Lead"),
+            leading: const Icon(
+              Icons.system_security_update_good_sharp,
+              color: Colors.purple,
+            ),
+            title: const Text("Project Manager"),
             onTap: () {
-              Navigator.pushNamed(context, "projects_lead");
+              Navigator.pushNamed(context, "project_manager");
             },
           ),
 
-          // TEAM COORDINATOR
+          // Year 1 representative
           ListTile(
-            leading: const Icon(Icons.precision_manufacturing_sharp),
-            title: const Text("Team Coordinator"),
+            leading: const Icon(
+              Icons.repeat_one_rounded,
+              color: Colors.indigo,
+            ),
+            title: const Text("Year 1 Representative"),
             onTap: () {
-              Navigator.pushNamed(context, "team_coordinator");
+              Navigator.pushNamed(context, "year1_representative");
             },
           ),
 
-          // Events Planner & Research Lead
+          // Year 2 representative
           ListTile(
-            leading: const Icon(Icons.precision_manufacturing_sharp),
-            title: const Text("Events Planner & Research Lead"),
+            leading: const Icon(
+              Icons.restore_page_outlined,
+              color: Colors.brown,
+            ),
+            title: const Text("Year 2 Representative"),
             onTap: () {
-              Navigator.pushNamed(context, "events_planner");
-            },
-          ),
-
-          // PUBILCITY
-          ListTile(
-            leading: const Icon(Icons.precision_manufacturing_sharp),
-            title: const Text("Publicity / Public Relations Officer"),
-            onTap: () {
-              Navigator.pushNamed(context, "publicity");
-            },
-          ),
-
-          // Student Organization Representative Council Officer
-          ListTile(
-            leading: const Icon(Icons.precision_manufacturing_sharp),
-            title: const Text(
-                "Student Organization Representative Council Officer"),
-            onTap: () {
-              Navigator.pushNamed(context, "student_organization");
+              Navigator.pushNamed(context, "year2_representative");
             },
           ),
         ],

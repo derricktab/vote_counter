@@ -59,26 +59,20 @@ class _PresidentsState extends State<Presidents> {
     });
   }
 
-  _incrementViola() {
+  _incrementNasser() {
     setState(() {
       viola++;
       prefs.setInt('viola', viola);
     });
   }
 
-  _incrementLeticia() {
+  _incrementOsbert() {
     setState(() {
       leticia++;
       prefs.setInt('leticia', leticia);
     });
   }
 
-  _incrementJulian() {
-    setState(() {
-      julian++;
-      prefs.setInt('julian', julian);
-    });
-  }
 
   @override
   void initState() {
@@ -91,7 +85,7 @@ class _PresidentsState extends State<Presidents> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("COSAKU PRESIDENTIAL CANDIDATES"),
+        title: const Text("ISACA PRESIDENTIAL CANDIDATES"),
         centerTitle: true,
       ),
       body: ListView(children: [
@@ -102,7 +96,7 @@ class _PresidentsState extends State<Presidents> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              "assets/logo.png",
+              "assets/logo.webp",
               width: 100,
             ),
             const Text(
@@ -123,7 +117,7 @@ class _PresidentsState extends State<Presidents> {
               Column(
                 children: [
                   Image.asset(
-                    "assets/IMG_20221015_141738 - Nabunje Leticia.jpg",
+                    "assets/Screenshot_20221117-191111 - Byaruhanga Nasser.png",
                     width: 200,
                     height: 150,
                   ),
@@ -131,7 +125,7 @@ class _PresidentsState extends State<Presidents> {
                     height: 15,
                   ),
                   const Text(
-                    "NABUNJE LETICIA",
+                    "BYARUHANGA NASSER",
                     style: TextStyle(fontSize: 20),
                   ),
 
@@ -144,7 +138,7 @@ class _PresidentsState extends State<Presidents> {
                   // INCREMENTING BUTTON
                   GestureDetector(
                     onTap: (() {
-                      _incrementLeticia();
+                      _incrementNasser();
                     }),
                     child: Container(
                       padding: const EdgeInsets.symmetric(
@@ -160,11 +154,11 @@ class _PresidentsState extends State<Presidents> {
 
               const SizedBox(width: 30),
 
-              // WAKOOLI VIOLA RITAH
+              // NDYAMUHAKYI OSBART
               Column(
                 children: [
                   Image.asset(
-                    "assets/IMG_20221103_183320 - Wakooli viola.png",
+                    "assets/IMG-20220724-WA0017 (2) - Twinomujuni Albert.jpg",
                     width: 200,
                     height: 150,
                   ),
@@ -172,7 +166,7 @@ class _PresidentsState extends State<Presidents> {
                     height: 15,
                   ),
                   const Text(
-                    "WAKOOLI VIOLA RITAH",
+                    "NDYAMUHAKYI OSBART",
                     style: TextStyle(fontSize: 20),
                   ),
 
@@ -185,7 +179,7 @@ class _PresidentsState extends State<Presidents> {
                   // INCREMENTING BUTTON
                   GestureDetector(
                     onTap: (() {
-                      _incrementViola();
+                      _incrementOsbert();
                     }),
                     child: Container(
                       padding: const EdgeInsets.symmetric(
@@ -201,40 +195,6 @@ class _PresidentsState extends State<Presidents> {
 
               const SizedBox(width: 30),
 
-              // AINEMBABAZI JULIAN
-              Column(
-                children: [
-                  Image.asset(
-                    "assets/DSC_69 - ainembabazi julian.jpg",
-                    width: 200,
-                    height: 150,
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  const Text(
-                    "AINEMBABAZI JULIAN",
-                    style: TextStyle(fontSize: 20),
-                  ),
-                  Text(
-                    julian.toString(),
-                    style: const TextStyle(fontSize: 50),
-                  ),
-                  GestureDetector(
-                    onTap: (() {
-                      _incrementJulian();
-                    }),
-                    child: Container(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 20, vertical: 10),
-                      decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(30)),
-                      child: const Text("ADD VOTE"),
-                    ),
-                  )
-                ],
-              ),
             ],
           ),
         )

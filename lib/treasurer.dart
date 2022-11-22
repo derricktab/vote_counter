@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-
 class Treasurer extends StatefulWidget {
   const Treasurer({super.key});
 
@@ -10,23 +9,27 @@ class Treasurer extends StatefulWidget {
 }
 
 class _TreasurerState extends State<Treasurer> {
- var prefs;
-  var emily;
+  var prefs;
+  var emily = 0;
 
   initalizePrefs() async {
     prefs = await SharedPreferences.getInstance();
-    
-    if (emily == null) {
-      prefs.setInt('emily', 0);
+
+    if (emily == 0) {
+      setState(() {
+        prefs.setInt('emily', 0);
+      });
     } else {
-      prefs.setInt('emily', emily);
+      setState(() {
+        prefs.setInt('emily', emily);
+      });
     }
   }
 
   getPrefValues() async {
     var prefs = await SharedPreferences.getInstance();
     setState(() {
-      emily = prefs.getInt("emily");
+      emily = int.parse(prefs.getInt("emily").toString());
     });
   }
 
@@ -59,7 +62,7 @@ class _TreasurerState extends State<Treasurer> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              "assets/logo.png",
+              "assets/logo.webp",
               width: 100,
             ),
             const Text(
@@ -80,7 +83,7 @@ class _TreasurerState extends State<Treasurer> {
               Column(
                 children: [
                   Image.asset(
-                    "assets/FLORENCE.jpeg",
+                    "assets/placeholder.PNG",
                     width: 200,
                     height: 150,
                   ),
@@ -114,8 +117,6 @@ class _TreasurerState extends State<Treasurer> {
                   ),
                 ],
               ),
-
-              
             ],
           ),
         )

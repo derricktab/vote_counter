@@ -36,7 +36,6 @@ class _ProjectManagerState extends State<ProjectManager> {
         prefs.setInt('gerrard', gerrard);
       });
     }
-
   }
 
   getPrefValues() async {
@@ -84,7 +83,7 @@ class _ProjectManagerState extends State<ProjectManager> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              "assets/logo.png",
+              "assets/logo.webp",
               width: 100,
             ),
             const Text(
@@ -180,8 +179,6 @@ class _ProjectManagerState extends State<ProjectManager> {
                   ),
                 ],
               ),
-
-
             ],
           ),
         )

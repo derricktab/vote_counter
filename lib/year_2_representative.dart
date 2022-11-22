@@ -36,7 +36,6 @@ class _Year2RepresentativeState extends State<Year2Representative> {
         prefs.setInt('julius', julius);
       });
     }
-
   }
 
   getPrefValues() async {
@@ -84,7 +83,7 @@ class _Year2RepresentativeState extends State<Year2Representative> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              "assets/logo.png",
+              "assets/logo.webp",
               width: 100,
             ),
             const Text(
@@ -180,8 +179,6 @@ class _Year2RepresentativeState extends State<Year2Representative> {
                   ),
                 ],
               ),
-
-
             ],
           ),
         )

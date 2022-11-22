@@ -36,7 +36,6 @@ class _CommitteeMembersState extends State<CommitteeMembers> {
         prefs.setInt('aaron', aaron);
       });
     }
-
   }
 
   getPrefValues() async {
@@ -84,7 +83,7 @@ class _CommitteeMembersState extends State<CommitteeMembers> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              "assets/logo.png",
+              "assets/logo.webp",
               width: 100,
             ),
             const Text(
@@ -180,8 +179,6 @@ class _CommitteeMembersState extends State<CommitteeMembers> {
                   ),
                 ],
               ),
-
-
             ],
           ),
         )

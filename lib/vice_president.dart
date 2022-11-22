@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-
 class VicePresidents extends StatefulWidget {
   const VicePresidents({super.key});
 
@@ -15,15 +14,14 @@ class _VicePresidentsState extends State<VicePresidents> {
 
   initalizePrefs() async {
     prefs = await SharedPreferences.getInstance();
-    
+
     if (phillip == 0) {
       setState(() {
-      prefs.setInt('phillip', 0);
-        
+        prefs.setInt('phillip', 0);
       });
     } else {
       setState(() {
-       prefs.setInt('phillip', phillip);
+        prefs.setInt('phillip', phillip);
       });
     }
   }
@@ -49,7 +47,6 @@ class _VicePresidentsState extends State<VicePresidents> {
     initalizePrefs();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,7 +62,7 @@ class _VicePresidentsState extends State<VicePresidents> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              "assets/logo.png",
+              "assets/logo.webp",
               width: 100,
             ),
             const Text(
@@ -120,8 +117,6 @@ class _VicePresidentsState extends State<VicePresidents> {
                   ),
                 ],
               ),
-
-              
             ],
           ),
         )

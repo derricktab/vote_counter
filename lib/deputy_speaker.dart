@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class Presidents extends StatefulWidget {
-  const Presidents({super.key});
+class DeputySpeaker extends StatefulWidget {
+  const DeputySpeaker({super.key});
 
   @override
-  State<Presidents> createState() => _PresidentsState();
+  State<DeputySpeaker> createState() => _DeputySpeakerState();
 }
 
-class _PresidentsState extends State<Presidents> {
+class _DeputySpeakerState extends State<DeputySpeaker> {
   var prefs;
 
   var awany = 0;
@@ -36,7 +36,6 @@ class _PresidentsState extends State<Presidents> {
         prefs.setInt('awany', awany);
       });
     }
-
   }
 
   getPrefValues() async {
@@ -84,7 +83,7 @@ class _PresidentsState extends State<Presidents> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              "assets/logo.png",
+              "assets/logo.webp",
               width: 100,
             ),
             const Text(
@@ -180,8 +179,6 @@ class _PresidentsState extends State<Presidents> {
                   ),
                 ],
               ),
-
-
             ],
           ),
         )
